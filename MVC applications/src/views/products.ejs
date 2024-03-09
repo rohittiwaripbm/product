@@ -1,0 +1,36 @@
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <% product.forEach(product=>{ %>
+                    <tr>
+                        <th><%= product.id %></th>
+                        <td><%= product.name %></td>
+                        <td><%= product.desc %> </td>
+                        <td scope="col"><%= product.price %></td>
+                        <td>
+                            <img src="<%= product.imageurl %>" />
+                        </td>
+                        <td><a href="/" class="btn btn-success">View</a></td>
+                        <td><a href="/update-product/<%= product.id %>" class="btn btn-primary">Update</a></td>
+
+                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+
+                    </tr>
+              <%  }) %>
+               
+            </tbody>
+        </table>
